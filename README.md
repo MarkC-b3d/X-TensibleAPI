@@ -1,2 +1,2 @@
-# X-TensibleAPI
-web application provides an interactive checklist for operating a Cessna 172 aircraft, intended to be accessed on a phone or tablet while the server runs on the machine running X-Plane 11. It uses HTML, CSS, JavaScript, FastAPI, and integrates with the Swiper.js library for a smooth user experience.
+# XtensibleAPI
+The Xtensible API is a powerful and user-friendly solution designed to enhance your X-Plane 11 flight simulation experience by enabling remote control of the aircraft using a phone or tablet. 
