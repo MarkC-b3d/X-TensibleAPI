@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cessna 172 Checklist</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #263240;
+            color: white;
+        }
+        .swiper-container {
+            width: 100%;
+            height: calc(100vh - 56px); /* Subtracting navbar height */
+        }
+        .swiper-slide {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; /* Align buttons to the top */
+        }
+        .command-btn {
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            margin: 10px;
+            width: 80%; /* Adjusted width to fit within the slide */
+            max-width: 300px; /* Added max-width to prevent buttons from becoming too wide */
+            background-color: #1678b5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .command-btn:hover {
+            background-color: #145a8a;
+        }
+        .clicked {
+    background-color: green;
+    color: white;
+}
+
+        .navbar-dark {
+            
+            background-color: #000000;
+        }
+
+        .navbarNav{
+            
+            background-color: #000000;
+        }
+        
+        .navbar-brand {
+            
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Cessna 172 Checklist</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-slide="0">Preflight</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-slide="1">Before Starting Engine</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-slide="2">Starting Engine</a>
+                </li>                
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-slide="3">Before Taxi</a>
+                </li>                
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-slide="4">Before Takeoff</a>
+                </li>                    
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-slide="5">Takeoff</a>
+                </li>          
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-slide="6">Climb Checklist</a>
+                </li>    
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-slide="7">Cruise Checklist</a>
+                </li>    
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-slide="7">Descent Checklist</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-slide="8">Before Landing Checklist</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-slide="9">Landing Checklist</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-slide="10">After Landing Checklist</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-slide="11">Engine Shutdown Checklist</a>
+                </li>
+                <!-- Add more navbar items as needed -->
+            </ul>
+        </div>
+    </nav>
+
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" id="preflight">
+                <h2>Preflight</h2>
+                
+                <button class="command-btn" data-command="sim/lights/landing_lights_on">Landing Lights - ON</button>
+                <button class="command-btn" data-command="sim/flightmodel/controls/parkbrake:1">Parking brake - SET</button>
+                <button class="command-btn" data-command="sim/cockpit2/engine/actuators/ignition_key[0]:0">Ignition Switch - OFF</button>
+                <button class="command-btn" data-command="sim/cockpit/electrical/avionics_on:0">Avionics Master Switch - OFF</button>
+                <button class="command-btn" data-command="sim/cockpit/electrical/battery_on:1">Master Battery Switch - ON</button>
+                <button class="command-btn" data-command="">Fuel Level - CHECK</button>
+                <button class="command-btn" data-command="sim/cockpit/electrical/avionics_on:1">Avionics Master Switch - ON</button>
+                <button class="command-btn" data-command="">Avionics Cooling Fan - ON & AUDIBLE</button>
+                <button class="command-btn" data-command="sim/cockpit/electrical/avionics_on:0">Avionics Master Switch - OFF</button>
+                <button class="command-btn" data-command="sim/cockpit2/switches/alternate_static_air_ratio:<0.1">Static Pressure Alternate - OFF</button>
+                <button class="command-btn" data-command="sim/cockpit/warnings/annunciator_test_pressed:1">Warning Lights Panel - TEST</button>
+                <button class="command-btn" data-command="sim/cockpit/warnings/annunciator_test_pressed:0">Warning Lights Panel - OFF</button>
+                <button class="command-btn" data-command="laminar/c172/fuel/fuel_tank_selector:4">Fuel Selector Valve - BOTH</button>
+                <button class="command-btn" data-command="laminar/c172/fuel/fuel_cutoff_selector:0">Fuel Shutoff Valve - PUSHED IN</button>
+                <button class="command-btn" data-command="sim/cockpit2/controls/flap_ratio:>0.90">Flaps 10/20/FULL - TESTED</button>
+                <button class="command-btn" data-command="sim/cockpit2/controls/flap_ratio:<0.02">Flaps - UP</button>
+                <button class="command-btn" data-command="sim/cockpit/switches/pitot_heat_on:1">Pitot Heat - ON</button>
+                <button class="command-btn" data-command="">Ammeter Current Load - CHECK</button>
+                <button class="command-btn" data-command="sim/cockpit/switches/pitot_heat_on:0">Pitot Heat - OFF</button>
+                <button class="command-btn" data-command="sim/cockpit/electrical/battery_on:0">Master Battery Switch - OFF</button>
+                <button class="command-btn" data-command="sim/cockpit2/controls/elevator_trim:-0.03|0.03">Trim - TAKEOFF</button>
+                <button class="command-btn" id="preflight-complete-btn" data-command="preflight_check_complete">Preflight Checklist Complete</button>
+
+
+                <!-- Add more buttons as needed -->
+            </div>
+            <div class="swiper-slide" id="before-starting-engine">
+                <h2>Before Starting Engine</h2>
+                <button class="command-btn" data-command="">Preflight Inspection - DONE</button>
+                <button class="command-btn" data-command="">Passenger Briefing - DONE</button>
+                <button class="command-btn" data-command="">Seats and Belts - ADJUSTED & SECURE</button>
+                <button class="command-btn" data-command="">Circuit Breakers - CHECKED IN</button>
+                <button class="command-btn" data-command="">Electrical Equipment - OFF</button>
+                <button class="command-btn" data-command="sim/flightmodel/controls/parkbrake:1">Parking Brake - ON</button>
+                <button class="command-btn" data-command="sim/cockpit2/autopilot/autopilot_on:0">Autopilot - OFF</button>
+                <button class="command-btn" data-command="sim/cockpit/electrical/avionics_on:0">Avionics Master Switch - OFF</button>
+                <button class="command-btn" data-command="sim/cockpit2/fuel/fuel_tank_selector:4">Fuel Selector Valve - BOTH</button>
+                <button class="command-btn" data-command="sim/cockpit2/fuel/fuel_tank_selector:>0">Fuel Shutoff Valve - PUSHED IN</button>
+                <button class="command-btn" id="before-starting-complete-btn" data-command="preflight_check_complete">Before Starting Engine Checklist Complete</button>
+                <!-- Add more buttons as needed -->
+            </div>
+            <div class="swiper-slide" id="starting-engine">
+                <h2>Starting Engine</h2>
+                <button class="command-btn" data-command="sim/cockpit/electrical/battery_on:1">Master Battery Switch - ON</button>
+                <button class="command-btn" data-command="sim/cockpit/electrical/beacon_lights_on:1">Beacon Light - ON</button>
+                <button class="command-btn" data-command="sim/cockpit2/engine/actuators/throttle_ratio[0]:0.15|0.20">Throttle - OPEN 1/4 INCH</button>
+                <button class="command-btn" data-command="sim/cockpit2/engine/actuators/mixture_ratio[0]:>0.95">Mixture - FULL RICH</button>
+                <button class="command-btn" data-command="">Carb Heat - COLD</button>
+                <button class="command-btn" data-command="sim/cockpit/engine/fuel_pump_on[0]:1">AUX Fuel Pump - ON</button>
+                <button class="command-btn" data-command="sim/cockpit/engine/fuel_pump_on[0]:0">AUX Fuel Pump - OFF</button>
+                <button class="command-btn" data-command="">Propeller Area - CLEAR</button>
+                <button class="command-btn" data-command="sim/cockpit2/engine/actuators/ignition_key[0]:4">Ignition Switch - START</button>
+                <button class="command-btn" data-command="">Oil Pressure - CHECK</button>
+                <button class="command-btn" data-command="sim/cockpit/electrical/generator_on[0]:1">Master Alternator Switch - ON</button>
+                <button class="command-btn" data-command="">Ammeter - CHECK</button>
+                <button class="command-btn" data-command="sim/cockpit2/switches/navigation_lights_on:1">Nav Lights - ON (NIGHT ONLY)</button>
+                <button class="command-btn" data-command="sim/cockpit/electrical/avionics_on:1">Avionics Master Switch - ON</button>
+                <button class="command-btn" data-command="">Radios & GPS - ON</button>
+                <button class="command-btn" data-command="sim/cockpit2/controls/flap_ratio:<0.02">Flaps - UP</button>
+                <button class="command-btn" id="starting-complete-btn" data-command="preflight_check_complete">Starting Engine Checklist Complete</button>
+                <!-- Add more buttons as needed -->
+            </div>            
+            <div class="swiper-slide" id="before-taxi">
+                <h2>Before Taxi</h2>
+                <button class="command-btn" data-command="starting_engine_2">Fuel Quantity - CHECK</button>
+                <button class="command-btn" data-command="starting_engine_2">Flight Controls - FREE & CORRECT</button>
+                <button class="command-btn" data-command="starting_engine_2">Seats & Belts - ADJUSTED & SECURE</button>
+                <button class="command-btn" data-command="sim/cockpit/warnings/annunciators/cabin_door_open:0">Cabin Doors - CLOSED</button>
+                <button class="command-btn" data-command="starting_engine_2">Flight Instruments - SET</button>
+                <button class="command-btn" data-command="starting_engine_2">Radios & Avionics - SET</button>
+                <button class="command-btn" data-command="sim/cockpit/radios/transponder_mode:1">Transponder - STANDBY</button>
+                <button class="command-btn" data-command="sim/cockpit2/switches/taxi_light_on:1">Taxi Lights - ON</button>
+                <button class="command-btn" data-command="sim/flightmodel/controls/parkbrake:0">Parking Brake - OFF</button>
+                <button class="command-btn" data-command="starting_engine_2">Brakes - CHECK</button>
+                <button class="command-btn" data-command="sim/flightmodel/controls/parkbrake:1">Parking Brake - ON</button>
+                <button class="command-btn" id="before-taxi-complete-btn" data-command="before_taxi_check_complete">Before Taxi Checklist Complete</button>
+                <!-- Add more buttons as needed -->
+            </div>            
+            <div class="swiper-slide" id="before-takeoff">
+                <h2>Before Takeoff</h2>
+                <button class="command-btn" data-command="sim/flightmodel/controls/parkbrake:1">Parking Brake - ON</button>
+                <button class="command-btn" data-command="sim/cockpit2/engine/actuators/mixture_ratio[0]:>0.9">Mixture - FULL RICH</button>
+                <button class="command-btn" data-command="sim/cockpit2/fuel/fuel_tank_selector:4">Fuel Selector Valve - BOTH</button>
+                <button class="command-btn" data-command="sim/cockpit2/engine/actuators/throttle_ratio[0]:>0.55">Throttle - OPEN @ 1800RPM</button>
+                <button class="command-btn" data-command="sim/cockpit2/engine/actuators/ignition_key[0]:2">Ignition Switch - LEFT</button>
+                <button class="command-btn" data-command="sim/cockpit2/engine/actuators/ignition_key[0]:1">Ignition Switch - RIGHT</button>
+                <button class="command-btn" data-command="sim/flightmodel/controls/parkbrake:1">Magneto Drop & Difference - MAX 125 & 50</button>
+                <button class="command-btn" data-command="sim/cockpit2/engine/actuators/ignition_key[0]:3">Ignition Switch - BOTH</button>
+                <button class="command-btn" data-command="sim/cockpit2/engine/actuators/throttle_ratio[0]:0.10|0.14">Throttle @ 1000 RPM</button>
+                <button class="command-btn" data-command="">Magnetos - TESTED</button>
+                <button class="command-btn" data-command="">Engine Instruments - GREEN</button>
+                <button class="command-btn" data-command="">Warning Lights Panel - CLEAR</button>
+                <button class="command-btn" data-command="sim/cockpit/electrical/strobe_lights_on:1">Strobe Lights - ON</button>
+                <button class="command-btn" data-command="sim/cockpit/electrical/landing_lights_on:1">Landing Lights - ON</button>
+                <button class="command-btn" data-command="">Radios & Avionics - CHECKED & SET</button>
+                <button class="command-btn" data-command="sim/cockpit2/autopilot/autopilot_on:0">Autopilot - OFF</button>
+                <button class="command-btn" data-command="sim/cockpit2/controls/elevator_trim:-0.03|0.03">Elevator Trim - TAKEOFF</button>
+                <button class="command-btn" data-command="">Flaps - 0/10</button>
+                <button class="command-btn" id="before-takeoff-complete-btn" data-command="before_takeoff_check_complete">Before Takeoff Checklist Complete</button>
+            </div>
+            <div class="swiper-slide" id="takeoff-checklist">
+                <h2>Takeoff Checklist</h2>
+                <button class="command-btn" data-command="sim/cockpit2/switches/taxi_light_on:0">Taxi Lights - OFF</button>
+                <button class="command-btn" data-command="sim/cockpit/radios/transponder_mode:3">Transponder Mode - ALTITUDE</button>
+                <button class="command-btn" data-command="">Flaps - AS REQUIRED</button>
+                <button class="command-btn" data-command="sim/cockpit2/engine/actuators/mixture_ratio[0]:>0.9">Mixture - FULL RICH</button>
+                <button class="command-btn" data-command="sim/flightmodel/controls/parkbrake:0">Parking Brake - OFF</button>
+                <button class="command-btn" data-command="">Throttle - SMOOTHLY TO FULL</button>
+                <button class="command-btn" data-command="">Instuments - GREEN</button>
+                <button class="command-btn" data-command="">Climb Airspeed - 60/85 Knots</button>
+                <button class="command-btn" data-command="sim/cockpit2/controls/flap_ratio:<0.02">Flaps - UP</button>
+                <button class="command-btn" id="takeoff-complete-btn" data-command="takeoff_check_complete">Takeoff Checklist Complete</button>
+
+                 
+                <!-- Add more buttons as needed -->
+            </div>
+            <div class="swiper-slide" id="climb-checklist">
+                <h2>Climb Checklist</h2>
+                <button class="command-btn" data-command="sim/cockpit/electrical/landing_lights_on:0">Landing Lights - OFF ABOVE 10,000Ft</button>
+                <button class="command-btn" data-command="sim/cockpit2/engine/actuators/throttle_ratio[0]:>0.9">Throttle - FULL</button>
+                <button class="command-btn" data-command="sim/cockpit2/engine/actuators/mixture_ratio[0]:>0.9">Mixture - FULL</button>
+                <button class="command-btn" data-command="">Climb Airspeed - 70-85 Knots</button>
+                
+                <button class="command-btn" id="climb-complete-btn" data-command="climb_check_complete">Climb Checklist Complete</button>
+
+                 
+                <!-- Add more buttons as needed -->
+            </div>            
+            <div class="swiper-slide" id="cruise-checklist">
+                <h2>Cruise Checklist</h2>
+                <button class="command-btn" data-command="">Throttle - 2100/2500RPM</button>
+                <button class="command-btn" data-command="">Trim - ADJUSTED</button>
+                <button class="command-btn" data-command="">Mixture - LEAN</button>
+                <button class="command-btn" data-command="">Navaids & Radios - SET</button>
+                <button class="command-btn" data-command="">Navigation - ON COURSE</button>
+                <button class="command-btn" data-command="">Flight Instruments - CHECK</button>
+                <button class="command-btn" data-command="">Engine Instruments - CHECK GREEN</button>
+                <button class="command-btn" data-command="">Fuel Quantity - CHECK</button>
+                
+                <button class="command-btn" id="cruise-complete-btn" data-command="cruise_check_complete">Cruise Checklist Complete</button>
+
+                 
+                <!-- Add more buttons as needed -->
+            </div>            
+            <div class="swiper-slide" id="descent-checklist">
+                <h2>Descent Checklist</h2>
+                <button class="command-btn" data-command="">Throttle - ADJUSTED</button>
+                <button class="command-btn" data-command="">Mixture - FULL RICH</button>
+                <button class="command-btn" data-command="">Altimeter - SET</button>
+                <button class="command-btn" data-command="">NAV/GPS - SET</button>
+                <button class="command-btn" data-command="sim/cockpit2/fuel/fuel_tank_selector:4">Fuel Selector Valve - BOTH</button>
+                <button class="command-btn" data-command="">Flaps - AS REQUIRED</button>
+                
+                <button class="command-btn" id="descent-complete-btn" data-command="descent_check_complete">Descent Checklist Complete</button>
+
+                 
+                <!-- Add more buttons as needed -->
+            </div>            
+            <div class="swiper-slide" id="before-landing-checklist">
+                <h2>Before Landing Checklist</h2>
+                <button class="command-btn" data-command="">Seats & Belts - UPRIGHT & SECURE</button>
+                <button class="command-btn" data-command="sim/cockpit2/fuel/fuel_tank_selector:4">Fuel Selector Valve - BOTH</button>
+                <button class="command-btn" data-command="">Mixture - FULL RICH</button>
+                <button class="command-btn" data-command="sim/cockpit/electrical/landing_lights_on:1">Landing Lights - ON</button>
+                <button class="command-btn" data-command="sim/cockpit2/switches/taxi_light_on:1">Taxi Lights - ON</button>
+                <button class="command-btn" data-command="sim/cockpit2/autopilot/autopilot_on:0">Autopilot - OFF</button>
+                
+                <button class="command-btn" id="before-landing-complete-btn" data-command="before_landing_complete">Before Landing Checklist Complete</button>
+
+                 
+                <!-- Add more buttons as needed -->
+            </div>            
+            <div class="swiper-slide" id="landing-checklist">
+                <h2>Landing Checklist</h2>
+                <button class="command-btn" data-command="">Flaps - AS REQUIRED</button>
+                <button class="command-btn" data-command="">RECOMMENDED APPROACH SPEEDS</button>
+                <button class="command-btn" data-command="">Downwind - 85kts</button>
+                <button class="command-btn" data-command="">Base - 75kts</button>
+                <button class="command-btn" data-command="">Final - 65kts</button>
+                
+                <button class="command-btn" id="landing-complete-btn" data-command="landing_complete">Landing Checklist Complete</button>
+
+            </div>
+            <div class="swiper-slide" id="after-landing-checklist">
+                <h2>After Landing Checklist</h2>
+                <button class="command-btn" data-command="">Flaps - UP</button>
+                <button class="command-btn" data-command="sim/cockpit2/switches/landing_lights_on">Landing Lights - OFF</button>
+                <button class="command-btn" data-command="sim/cockpit/electrical/strobe_lights_on:0">Strobe Lights - OFF</button>
+                <button class="command-btn" data-command="sim/cockpit/electrical/nav_lights_on:0">Nav Lights - OFF</button>
+                <button class="command-btn" data-command="sim/cockpit/radios/transponder_mode:1">Transponder - STANDBY</button>
+
+                <button class="command-btn" id="after_landing-complete-btn" data-command="after_landing_complete">After Landing Checklist Complete</button>
+
+            </div>
+            <div class="swiper-slide" id="engine-shutdown-checklist">
+                <h2>Engine Shutdown</h2>
+                <button class="command-btn" data-command="sim/flightmodel/controls/parkbrake:1">Parking Brake - ON</button>
+                <button class="command-btn" data-command="sim/cockpit/radios/transponder_mode:0">Transponder - OFF</button>
+                <button class="command-btn" data-command="">Electrical Equipment - OFF</button>
+                <button class="command-btn" data-command="sim/cockpit2/autopilot/autopilot_on:0">Autopilot - OFF</button>
+                <button class="command-btn" data-command="sim/cockpit/electrical/avionics_on:0">Avionics Master Switch - OFF</button>
+                <button class="command-btn" data-command="">Throttle - 1000/1200 RPM</button>
+                <button class="command-btn" data-command="">Mixture - CUTOFF</button>
+                <button class="command-btn" data-command="sim/cockpit2/switches/taxi_light_on:0">Taxi Lights - OFF</button>
+                <button class="command-btn" data-command="sim/cockpit/electrical/beacon_lights_on:0">Beacon Light - OFF</button>
+                <button class="command-btn" data-command="sim/cockpit2/engine/actuators/ignition_key[0]:0">Ignition Switch - OFF</button>
+                <button class="command-btn" data-command="sim/cockpit/electrical/generator_on[0]:0">Master Switch (Alternator) - OFF</button>
+                <button class="command-btn" data-command="sim/cockpit/electrical/battery_on:0">Master Switch (Battery) - OFF</button>
+                <button class="command-btn" data-command="sim/cockpit2/fuel/fuel_tank_selector:!4">Fuel Selector Valve - LEFT OR RIGHT</button>
+
+                <button class="command-btn" id="engine-shutdown-complete-btn" data-command="engine_shutdown_complete">Engine Shutdown Checklist Complete</button>
+
+            </div>
+            <!-- Add more swiper-slide divs for each category -->
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+// Get all buttons with the class "green-button"
+var buttons = document.querySelectorAll('.command-btn');
+
+// Loop through each button and attach a click event listener
+buttons.forEach(function(button) {
+    button.addEventListener('click', function() {
+        changeColor(this); // Pass the clicked button to the changeColor function
+    });
+});
+
+function changeColor(button) {
+    button.style.backgroundColor = "#4CAF50";
+}
+
+
+
+const swiper = new Swiper('.swiper-container', {
+        direction: 'horizontal',
+        loop: false,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        });
+        document.getElementById("preflight-complete-btn").addEventListener("click", () => {
+    swiper.slideTo(1); // 2 is the index of the "Starting Engine" slide
+    document.body.scrollIntoView({ behavior: 'smooth', block: 'start' }); // Scrolls the body to the top smoothly
+});
+
+
+
+        document.querySelectorAll(".command-btn").forEach(button => {
+            button.addEventListener("click", async () => {
+                const command = button.getAttribute("data-command");
+                try {
+                    const response = await fetch(`/send-command`, {
+                        method: "POST",
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ command })
+                    });
+
+                    if (response.status === 204) {
+                        button.classList.add("clicked");
+                    } else {
+                        console.error(`Failed to send ${command} command.`);
+                    }
+                } catch (error) {
+                    console.error("Error:", error);
+                }
+            });
+        });
+
+        // Sync navbar clicks with swiper slides
+        document.querySelectorAll('.nav-link').forEach(navLink => {
+            navLink.addEventListener('click', (event) => {
+                event.preventDefault();
+                const slideIndex = navLink.getAttribute('data-slide');
+                swiper.slideTo(slideIndex);
+            });
+        });
+   
+</script>
+</body>
+</html>
