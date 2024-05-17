@@ -70,12 +70,11 @@ The Xtensible API is a powerful and user-friendly solution designed to enhance y
 ## Usage
 
 1. **Clone the Repository:** `git clone <repository-url>`
-2. **Navigate to the Backend Directory:** `cd backend`
-3. **Install Dependencies:** `pip install fastapi uvicorn`
-4. **Run the Server:** `uvicorn main:app --reload`
-5. **Open the Application:** Access the application on another device by navigating to `http://<server-ip>:8000` in a web browser.
-6. **Navigate:** Use the navigation bar to access different checklist phases.
-7. **Interact:** Click on buttons to perform checklist actions and see visual feedback.
+2. **Install Dependencies:** `pip install fastapi uvicorn`
+3. **Run the Server:** `uvicorn main:app --reload`
+4. **Open the Application:** Access the application on another device by navigating to `http://<server-ip>:8000` in a web browser.
+5. **Navigate:** Use the navigation bar to access different checklist phases.
+6. **Interact:** Click on buttons to perform checklist actions and see visual feedback.
 
 ## Contribution
 
