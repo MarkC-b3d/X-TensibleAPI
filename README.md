@@ -5,6 +5,7 @@ The Xtensible API is a powerful and user-friendly solution designed to enhance y
 
 # Flight Checklist Application
 
+![Image Description](https://i.imgur.com/GrQZ6Rg.gif)
 ## Features
 
 - **Interactive Checklists:** Step-by-step checklists for various phases of flight.
